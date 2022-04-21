@@ -4,6 +4,7 @@ import numpy as np
 import os
 from tabulate import tabulate
 import csv
+from natsort import natsorted
 
 # Load the model
 model = load_model('keras_model.h5')
@@ -15,7 +16,7 @@ category_labels = [sub[1] for sub in labels]
 
 test_dir = 'test-data'
 test_files = os.listdir(test_dir)
-test_files = sorted([os.path.join(test_dir, file) for file in test_files])
+test_files = natsorted([os.path.join(test_dir, file) for file in test_files])
 n_files = len(test_files)
 
 # Create the array of the right shape to feed into the keras model
