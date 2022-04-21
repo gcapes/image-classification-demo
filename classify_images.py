@@ -2,9 +2,16 @@ from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 import os
+from tabulate import tabulate
+import csv
 
 # Load the model
 model = load_model('keras_model.h5')
+
+with open('labels.txt') as f:
+    reader = csv.reader(f, delimiter=' ')
+    labels = list(reader)
+category_labels = [sub[1] for sub in labels]
 
 test_dir = 'test-data'
 test_files = os.listdir(test_dir)
@@ -32,5 +39,9 @@ for i, file in enumerate(test_files):
 
 # run the inference
 prediction = model.predict(data)
-print((prediction*100).astype(int))
 
+entries = []
+for file, [cat1, cat2] in zip(test_files, (prediction*100).round()):
+    entries.append([file, cat1, cat2])
+header = ['file'] + category_labels
+print(tabulate(entries, headers=header, tablefmt='github'))
