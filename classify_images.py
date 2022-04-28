@@ -45,6 +45,6 @@ prediction = model.predict(data)
 
 entries = []
 for file, [cat1, cat2] in zip(test_files, (prediction*100).round()):
-    entries.append([file, cat1, cat2])
-header = ['file'] + category_labels
+    entries.append([os.path.basename(file), f'![]({file})', cat1, cat2])
+header = ['file', 'image'] + category_labels
 print(tabulate(entries, headers=header, tablefmt='github'))
