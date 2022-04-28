@@ -5,9 +5,11 @@ import os
 from tabulate import tabulate
 import csv
 from natsort import natsorted
+import sys
 
+model_file = sys.argv[1]
 # Load the model
-model = load_model('keras_model.h5')
+model = load_model(model_file)
 
 with open('labels.txt') as f:
     reader = csv.reader(f, delimiter=' ')
