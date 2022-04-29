@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>slides</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./reveal.js-master/dist/reset.css">
+  <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="./reveal.js-master/dist/theme/mywhite.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="image-classification-demo" class="slide level1">
+<h1>Image classification demo</h1>
+</section>
+<section id="intro" class="slide level1">
+<h1>Intro</h1>
+<ul>
+<li>I’ll be using <a href="https://teachablemachine.withgoogle.com/train/image">Teachable Machine</a> for this example.</li>
+<li>It’s a web-based tool for creating machine-learning models. I’ll be showing an image classification example using cats and dogs.</li>
+<li>A more business relevant application might be in quality control: identifying good and bad components on a production line.</li>
+</ul>
+</section>
+<section id="the-demo" class="slide level1">
+<h1>The demo</h1>
+<ul>
+<li><p>Train a machine learning model using <a href="https://teachablemachine.withgoogle.com/train">Teachable Machine</a></p></li>
+<li><p>Train the model to classify images as cats or dogs using a training dataset</p></li>
+<li><p>Test the model with different test images and review its classification power</p></li>
+</ul>
+</section>
+<section id="first-model" class="slide level1">
+<h1>First model</h1>
+<ul>
+<li>First training dataset has 15 images of cats and 6 images of dogs</li>
+<li>Three dogs incorrectly classified as cats.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<table>
+<thead>
+<tr class="header">
+<th>file</th>
+<th>image</th>
+<th>cat</th>
+<th>dog</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test1.jpg</td>
+<td><img data-src="../images/test-data/Test1.jpg" /></td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Test2.jpg</td>
+<td><img data-src="../images/test-data/Test2.jpg" /></td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Test3.jpg</td>
+<td><img data-src="../images/test-data/Test3.jpg" /></td>
+<td>86</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>Test4.JPG</td>
+<td><img data-src="../images/test-data/Test4.JPG" /></td>
+<td>40</td>
+<td>60</td>
+</tr>
+<tr class="odd">
+<td><strong>Test5.JPG</strong></td>
+<td><img data-src="../images/test-data/Test5.JPG" /></td>
+<td>89</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td><strong>Test6.JPG</strong></td>
+<td><img data-src="../images/test-data/Test6.JPG" /></td>
+<td>60</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>Test7.jpg</td>
+<td><img data-src="../images/test-data/Test7.jpg" /></td>
+<td>12</td>
+<td>88</td>
+</tr>
+<tr class="even">
+<td>Test8.jpg</td>
+<td><img data-src="../images/test-data/Test8.jpg" /></td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td><strong>Test9.jpg</strong></td>
+<td><img data-src="../images/test-data/Test9.jpg" /></td>
+<td>95</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Test10.jpg</td>
+<td><img data-src="../images/test-data/Test10.jpg" /></td>
+<td>4</td>
+<td>96</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="second-model" class="slide level1">
+<h1>Second model</h1>
+<ul>
+<li>Train a model using a training dataset with the same number of cats as dogs</li>
+<li>How does this affect the classification power using the same test images?</li>
+<li>One cat misclassified as a dog, and three dogs misclassified as cats.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>file</th>
+<th>image</th>
+<th>cat</th>
+<th>dog</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test1.jpg</td>
+<td><img data-src="../images/test-data/Test1.jpg" /></td>
+<td>99</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Test2.jpg</td>
+<td><img data-src="../images/test-data/Test2.jpg" /></td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Test3.jpg</td>
+<td><img data-src="../images/test-data/Test3.jpg" /></td>
+<td><strong>21</strong></td>
+<td><strong>79</strong></td>
+</tr>
+<tr class="even">
+<td>Test4.JPG</td>
+<td><img data-src="../images/test-data/Test4.JPG" /></td>
+<td>7</td>
+<td>93</td>
+</tr>
+<tr class="odd">
+<td>Test5.JPG</td>
+<td><img data-src="../images/test-data/Test5.JPG" /></td>
+<td><strong>88</strong></td>
+<td><strong>12</strong></td>
+</tr>
+<tr class="even">
+<td>Test6.JPG</td>
+<td><img data-src="../images/test-data/Test6.JPG" /></td>
+<td><strong>54</strong></td>
+<td><strong>46</strong></td>
+</tr>
+<tr class="odd">
+<td>Test7.jpg</td>
+<td><img data-src="../images/test-data/Test7.jpg" /></td>
+<td>8</td>
+<td>92</td>
+</tr>
+<tr class="even">
+<td>Test8.jpg</td>
+<td><img data-src="../images/test-data/Test8.jpg" /></td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>Test9.jpg</td>
+<td><img data-src="../images/test-data/Test9.jpg" /></td>
+<td><strong>57</strong></td>
+<td><strong>43</strong></td>
+</tr>
+<tr class="even">
+<td>Test10.jpg</td>
+<td><img data-src="../images/test-data/Test10.jpg" /></td>
+<td>2</td>
+<td>98</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="third-model" class="slide level1">
+<h1>Third model</h1>
+<ul>
+<li>Use a larger data set of training images. 12 cats, and 12 dogs</li>
+<li>Does this improve the classfication of the test images?</li>
+<li>There are still two dogs incorrectly classified as cats</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>file</th>
+<th>image</th>
+<th>cat</th>
+<th>dog</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test1.jpg</td>
+<td><img data-src="../images/test-data/Test1.jpg" /></td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Test2.jpg</td>
+<td><img data-src="../images/test-data/Test2.jpg" /></td>
+<td>99</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Test3.jpg</td>
+<td><img data-src="../images/test-data/Test3.jpg" /></td>
+<td>73</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>Test4.JPG</td>
+<td><img data-src="../images/test-data/Test4.JPG" /></td>
+<td>2</td>
+<td>98</td>
+</tr>
+<tr class="odd">
+<td>Test5.JPG</td>
+<td><img data-src="../images/test-data/Test5.JPG" /></td>
+<td><strong>97</strong></td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Test6.JPG</td>
+<td><img data-src="../images/test-data/Test6.JPG" /></td>
+<td>34</td>
+<td>66</td>
+</tr>
+<tr class="odd">
+<td>Test7.jpg</td>
+<td><img data-src="../images/test-data/Test7.jpg" /></td>
+<td>4</td>
+<td>96</td>
+</tr>
+<tr class="even">
+<td>Test8.jpg</td>
+<td><img data-src="../images/test-data/Test8.jpg" /></td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>Test9.jpg</td>
+<td><img data-src="../images/test-data/Test9.jpg" /></td>
+<td><strong>54</strong></td>
+<td>46</td>
+</tr>
+<tr class="even">
+<td>Test10.jpg</td>
+<td><img data-src="../images/test-data/Test10.jpg" /></td>
+<td>0</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>TODO:</p></li>
+<li><p><input type="checkbox" disabled="" />
+test with some ‘fun’ examples. Cartoons, wolves, lions</p></li>
+<li><p><input type="checkbox" disabled="" />
+demo in python</p></li>
+<li><p><input type="checkbox" disabled="" checked="" />
+write python code to analyse the test folder and display results</p></li>
+<li><p><input type="checkbox" disabled="" checked="" />
+pass model to load as command line argument</p></li>
+<li><p><input type="checkbox" disabled="" />
+make this into an actual slideshow</p></li>
+</ul>
+</section>
+<section id="take-home-messages" class="slide level1">
+<h1>Take-home messages</h1>
+<ul>
+<li>The process is rather a black box: you don’t have much control, so if it performs well that’s great, but there’s not much you can do if it doesn’t do what you want.</li>
+<li>There is time involved in getting good input data. The robustness of the predictive algorithm is affected by the quality of the training data set.
+<ul>
+<li>Image segmentation may help as preprocessing step, as well as centering and orienting the images - the machine learning is looking for patterns, but the patterns found may not be the ones you think are important</li>
+<li>You should be careful to remove bias from your training data set so that the model isn’t biased in favour of the majority class. Maybe show this <a href="https://youtu.be/59bMh59JQDo">video</a>?</li>
+</ul></li>
+<li>AI needs data to fuel it</li>
+</ul>
+</section>
+<section id="additional-thoughts-from-discussion-with-david" class="slide level1">
+<h1>additional thoughts from discussion with David</h1>
+<ul>
+<li><p>image segmentation - identifying the animals in a larger image rather than blank background</p></li>
+<li><p>nurse/doctor word example - see salford slides</p></li>
+<li><p>elephant in the room https://arxiv.org/pdf/1808.03305.pdf</p></li>
+<li><p>spot the difference is easier than what is this - production line should be an easier problem</p></li>
+<li><p>cost-benefit of false positives vs false negatives</p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="./reveal.js-master/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="./reveal.js-master/plugin/notes/notes.js"></script>
+  <script src="./reveal.js-master/plugin/search/search.js"></script>
+  <script src="./reveal.js-master/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: false,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
