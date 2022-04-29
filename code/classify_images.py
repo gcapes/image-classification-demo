@@ -16,7 +16,7 @@ with open('labels.txt') as f:
     labels = list(reader)
 category_labels = [sub[1] for sub in labels]
 
-test_dir = 'test-data'
+test_dir = '../images/test-data'
 test_files = os.listdir(test_dir)
 test_files = natsorted([os.path.join(test_dir, file) for file in test_files])
 n_files = len(test_files)
