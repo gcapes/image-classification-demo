@@ -21,8 +21,8 @@
 
 ---
 
-| file          | image                     | cat | dog |
-| ------------- | ------------------------- | --- | --- |
+| file          | image                               | cat | dog |
+| ------------- | ----------------------------------- | --- | --- |
 | Test1.jpg     | ![](../images/test-data/Test1.jpg)  | 100 | 0   |
 | Test2.jpg     | ![](../images/test-data/Test2.jpg)  | 100 | 0   |
 | Test3.jpg     | ![](../images/test-data/Test3.jpg)  | 86  | 14  |
@@ -40,8 +40,10 @@
 - How does this affect the classification power using the same test images?
 - One cat misclassified as a dog, and three dogs misclassified as cats.
 
-| file       | image                     | cat    | dog    |
-| ---------- | ------------------------- | ------ | ------ |
+---
+
+| file       | image                               | cat    | dog    |
+| ---------- | ----------------------------------- | ------ | ------ |
 | Test1.jpg  | ![](../images/test-data/Test1.jpg)  | 99     | 1      |
 | Test2.jpg  | ![](../images/test-data/Test2.jpg)  | 100    | 0      |
 | Test3.jpg  | ![](../images/test-data/Test3.jpg)  | **21** | **79** |
@@ -59,8 +61,10 @@
 - Does this improve the classfication of the test images?
 - There are still two dogs incorrectly classified as cats
 
-| file       | image                     | cat    | dog |
-| ---------- | ------------------------- | ------ | --- |
+--- 
+
+| file       | image                               | cat    | dog |
+| ---------- | ----------------------------------- | ------ | --- |
 | Test1.jpg  | ![](../images/test-data/Test1.jpg)  | 100    | 0   |
 | Test2.jpg  | ![](../images/test-data/Test2.jpg)  | 99     | 1   |
 | Test3.jpg  | ![](../images/test-data/Test3.jpg)  | 73     | 27  |
