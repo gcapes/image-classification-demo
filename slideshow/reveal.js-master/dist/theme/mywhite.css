@@ -270,6 +270,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   border-bottom: none;
 }
 
+.reveal table tr:hover {
+  transform: scale(2.5);
+  position: absolute;
+  top: 50%;
+  background-color: white;
+}
+
 .reveal sup {
   vertical-align: super;
   font-size: smaller;
@@ -293,6 +300,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal img {
   margin: var(--r-block-margin) 0;
+  height: 2em;
 }
 
 /*********************************************
