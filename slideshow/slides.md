@@ -8,7 +8,7 @@
 
 # The demo
 
-- Train a machine learning model using [Teachable Machine](https://teachablemachine.withgoogle.com/train) 
+- Train a machine learning model using [Teachable Machine](https://teachablemachine.withgoogle.com/train)
 
 - Train the model to classify images as cats or dogs using a training dataset
 
@@ -21,18 +21,18 @@
 
 ---
 
-| file          | image                               | cat | dog |
-| ------------- | ----------------------------------- | --- | --- |
-| Test1.jpg     | ![](../images/test-data/Test1.jpg)  | 100 | 0   |
-| Test2.jpg     | ![](../images/test-data/Test2.jpg)  | 100 | 0   |
-| Test3.jpg     | ![](../images/test-data/Test3.jpg)  | 86  | 14  |
-| Test4.JPG     | ![](../images/test-data/Test4.JPG)  | 40  | 60  |
-| **Test5.JPG** | ![](../images/test-data/Test5.JPG)  | 89  | 11  |
-| **Test6.JPG** | ![](../images/test-data/Test6.JPG)  | 60  | 40  |
-| Test7.jpg     | ![](../images/test-data/Test7.jpg)  | 12  | 88  |
-| Test8.jpg     | ![](../images/test-data/Test8.jpg)  | 0   | 100 |
-| **Test9.jpg** | ![](../images/test-data/Test9.jpg)  | 95  | 5   |
-| Test10.jpg    | ![](../images/test-data/Test10.jpg) | 4   | 96  |
+| file       | image                               | cat    | dog    |
+| ---------- | ----------------------------------- | ------ | ------ |
+| Test1.jpg  | ![](../images/test-data/Test1.jpg)  | 100    | 0      |
+| Test2.jpg  | ![](../images/test-data/Test2.jpg)  | 100    | 0      |
+| Test3.jpg  | ![](../images/test-data/Test3.jpg)  | 86     | 14     |
+| Test4.JPG  | ![](../images/test-data/Test4.JPG)  | 40     | 60     |
+| Test5.JPG  | ![](../images/test-data/Test5.JPG)  | **89** | **11** |
+| Test6.JPG  | ![](../images/test-data/Test6.JPG)  | **60** | **40** |
+| Test7.jpg  | ![](../images/test-data/Test7.jpg)  | 12     | 88     |
+| Test8.jpg  | ![](../images/test-data/Test8.jpg)  | 0      | 100    |
+| Test9.jpg  | ![](../images/test-data/Test9.jpg)  | **95** | **5**  |
+| Test10.jpg | ![](../images/test-data/Test10.jpg) | 4      | 96     |
 
 # Second model
 
@@ -61,22 +61,39 @@
 - Does this improve the classfication of the test images?
 - There are still two dogs incorrectly classified as cats
 
---- 
+---
 
-| file       | image                               | cat    | dog |
-| ---------- | ----------------------------------- | ------ | --- |
-| Test1.jpg  | ![](../images/test-data/Test1.jpg)  | 100    | 0   |
-| Test2.jpg  | ![](../images/test-data/Test2.jpg)  | 99     | 1   |
-| Test3.jpg  | ![](../images/test-data/Test3.jpg)  | 73     | 27  |
-| Test4.JPG  | ![](../images/test-data/Test4.JPG)  | 2      | 98  |
-| Test5.JPG  | ![](../images/test-data/Test5.JPG)  | **97** | 3   |
-| Test6.JPG  | ![](../images/test-data/Test6.JPG)  | 34     | 66  |
-| Test7.jpg  | ![](../images/test-data/Test7.jpg)  | 4      | 96  |
-| Test8.jpg  | ![](../images/test-data/Test8.jpg)  | 0      | 100 |
-| Test9.jpg  | ![](../images/test-data/Test9.jpg)  | **54** | 46  |
-| Test10.jpg | ![](../images/test-data/Test10.jpg) | 0      | 100 |
+| file       | image                               | cat    | dog    |
+| ---------- | ----------------------------------- | ------ | ------ |
+| Test1.jpg  | ![](../images/test-data/Test1.jpg)  | 100    | 0      |
+| Test2.jpg  | ![](../images/test-data/Test2.jpg)  | 99     | 1      |
+| Test3.jpg  | ![](../images/test-data/Test3.jpg)  | 73     | 27     |
+| Test4.JPG  | ![](../images/test-data/Test4.JPG)  | 2      | 98     |
+| Test5.JPG  | ![](../images/test-data/Test5.JPG)  | **97** | **3**  |
+| Test6.JPG  | ![](../images/test-data/Test6.JPG)  | 34     | 66     |
+| Test7.jpg  | ![](../images/test-data/Test7.jpg)  | 4      | 96     |
+| Test8.jpg  | ![](../images/test-data/Test8.jpg)  | 0      | 100    |
+| Test9.jpg  | ![](../images/test-data/Test9.jpg)  | **54** | **46** |
+| Test10.jpg | ![](../images/test-data/Test10.jpg) | 0      | 100    |
 
-- TODO: 
+# Model comparisons
+
+---
+
+| file       | image                               | cat    | dog    | cat    | dog    | cat    | dog    |
+| ---------- | ----------------------------------- | ------ | ------ | ------ | ------ | ------ | ------ |
+| Test1.jpg  | ![](../images/test-data/Test1.jpg)  | 100    | 0      | 99     | 1      | 100    | 0      |
+| Test2.jpg  | ![](../images/test-data/Test2.jpg)  | 100    | 0      | 100    | 0      | 99     | 1      |
+| Test3.jpg  | ![](../images/test-data/Test3.jpg)  | 86     | 14     | **21** | **79** | 73     | 27     |
+| Test4.JPG  | ![](../images/test-data/Test4.JPG)  | 40     | 60     | 7      | 93     | 2      | 98     |
+| Test5.JPG  | ![](../images/test-data/Test5.JPG)  | **89** | **11** | **88** | **12** | **97** | **3**  |
+| Test6.JPG  | ![](../images/test-data/Test6.JPG)  | **60** | **40** | **54** | **46** | 34     | 66     |
+| Test7.jpg  | ![](../images/test-data/Test7.jpg)  | 12     | 88     | 8      | 92     | 4      | 96     |
+| Test8.jpg  | ![](../images/test-data/Test8.jpg)  | 0      | 100    | 0      | 100    | 0      | 100    |
+| Test9.jpg  | ![](../images/test-data/Test9.jpg)  | **95** | **5**  | **57** | **43** | **54** | **46** |
+| Test10.jpg | ![](../images/test-data/Test10.jpg) | 4      | 96     | 2      | 98     | 0      | 100    |
+
+- TODO:
 
 - [ ] test with some 'fun' examples. Cartoons, wolves, lions
 

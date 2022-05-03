@@ -88,16 +88,16 @@
 <td>60</td>
 </tr>
 <tr class="odd">
-<td><strong>Test5.JPG</strong></td>
+<td>Test5.JPG</td>
 <td><img data-src="../images/test-data/Test5.JPG" /></td>
-<td>89</td>
-<td>11</td>
+<td><strong>89</strong></td>
+<td><strong>11</strong></td>
 </tr>
 <tr class="even">
-<td><strong>Test6.JPG</strong></td>
+<td>Test6.JPG</td>
 <td><img data-src="../images/test-data/Test6.JPG" /></td>
-<td>60</td>
-<td>40</td>
+<td><strong>60</strong></td>
+<td><strong>40</strong></td>
 </tr>
 <tr class="odd">
 <td>Test7.jpg</td>
@@ -112,10 +112,10 @@
 <td>100</td>
 </tr>
 <tr class="odd">
-<td><strong>Test9.jpg</strong></td>
+<td>Test9.jpg</td>
 <td><img data-src="../images/test-data/Test9.jpg" /></td>
-<td>95</td>
-<td>5</td>
+<td><strong>95</strong></td>
+<td><strong>5</strong></td>
 </tr>
 <tr class="even">
 <td>Test10.jpg</td>
@@ -133,6 +133,9 @@
 <li>How does this affect the classification power using the same test images?</li>
 <li>One cat misclassified as a dog, and three dogs misclassified as cats.</li>
 </ul>
+</section>
+<section class="slide level1">
+
 <table>
 <thead>
 <tr class="header">
@@ -213,6 +216,9 @@
 <li>Does this improve the classfication of the test images?</li>
 <li>There are still two dogs incorrectly classified as cats</li>
 </ul>
+</section>
+<section class="slide level1">
+
 <table>
 <thead>
 <tr class="header">
@@ -251,7 +257,7 @@
 <td>Test5.JPG</td>
 <td><img data-src="../images/test-data/Test5.JPG" /></td>
 <td><strong>97</strong></td>
-<td>3</td>
+<td><strong>3</strong></td>
 </tr>
 <tr class="even">
 <td>Test6.JPG</td>
@@ -275,11 +281,133 @@
 <td>Test9.jpg</td>
 <td><img data-src="../images/test-data/Test9.jpg" /></td>
 <td><strong>54</strong></td>
-<td>46</td>
+<td><strong>46</strong></td>
 </tr>
 <tr class="even">
 <td>Test10.jpg</td>
 <td><img data-src="../images/test-data/Test10.jpg" /></td>
+<td>0</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="model-comparisons" class="slide level1">
+<h1>Model comparisons</h1>
+</section>
+<section class="slide level1">
+
+<table>
+<thead>
+<tr class="header">
+<th>file</th>
+<th>image</th>
+<th>cat</th>
+<th>dog</th>
+<th>cat</th>
+<th>dog</th>
+<th>cat</th>
+<th>dog</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test1.jpg</td>
+<td><img data-src="../images/test-data/Test1.jpg" /></td>
+<td>100</td>
+<td>0</td>
+<td>99</td>
+<td>1</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Test2.jpg</td>
+<td><img data-src="../images/test-data/Test2.jpg" /></td>
+<td>100</td>
+<td>0</td>
+<td>100</td>
+<td>0</td>
+<td>99</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Test3.jpg</td>
+<td><img data-src="../images/test-data/Test3.jpg" /></td>
+<td>86</td>
+<td>14</td>
+<td><strong>21</strong></td>
+<td><strong>79</strong></td>
+<td>73</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>Test4.JPG</td>
+<td><img data-src="../images/test-data/Test4.JPG" /></td>
+<td>40</td>
+<td>60</td>
+<td>7</td>
+<td>93</td>
+<td>2</td>
+<td>98</td>
+</tr>
+<tr class="odd">
+<td>Test5.JPG</td>
+<td><img data-src="../images/test-data/Test5.JPG" /></td>
+<td><strong>89</strong></td>
+<td><strong>11</strong></td>
+<td><strong>88</strong></td>
+<td><strong>12</strong></td>
+<td><strong>97</strong></td>
+<td><strong>3</strong></td>
+</tr>
+<tr class="even">
+<td>Test6.JPG</td>
+<td><img data-src="../images/test-data/Test6.JPG" /></td>
+<td><strong>60</strong></td>
+<td><strong>40</strong></td>
+<td><strong>54</strong></td>
+<td><strong>46</strong></td>
+<td>34</td>
+<td>66</td>
+</tr>
+<tr class="odd">
+<td>Test7.jpg</td>
+<td><img data-src="../images/test-data/Test7.jpg" /></td>
+<td>12</td>
+<td>88</td>
+<td>8</td>
+<td>92</td>
+<td>4</td>
+<td>96</td>
+</tr>
+<tr class="even">
+<td>Test8.jpg</td>
+<td><img data-src="../images/test-data/Test8.jpg" /></td>
+<td>0</td>
+<td>100</td>
+<td>0</td>
+<td>100</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>Test9.jpg</td>
+<td><img data-src="../images/test-data/Test9.jpg" /></td>
+<td><strong>95</strong></td>
+<td><strong>5</strong></td>
+<td><strong>57</strong></td>
+<td><strong>43</strong></td>
+<td><strong>54</strong></td>
+<td><strong>46</strong></td>
+</tr>
+<tr class="even">
+<td>Test10.jpg</td>
+<td><img data-src="../images/test-data/Test10.jpg" /></td>
+<td>4</td>
+<td>96</td>
+<td>2</td>
+<td>98</td>
 <td>0</td>
 <td>100</td>
 </tr>
