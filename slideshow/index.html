@@ -25,15 +25,15 @@
     <div class="slides">
 
 
-<section id="image-classification-demo" class="slide level1">
-<h1>Image classification demo</h1>
+<section id="an-introduction-to-machine-learning-using-an-image-classification-demo" class="slide level1">
+<h1>An introduction to machine learning using an image classification demo</h1>
 </section>
 <section id="intro" class="slide level1">
 <h1>Intro</h1>
 <ul>
-<li>I’ll be using <a href="https://teachablemachine.withgoogle.com/train/image">Teachable Machine</a> for this example.</li>
+<li>I’ll be using <a href="https://teachablemachine.withgoogle.com/train/image">Teachable Machine</a> for this example</li>
 <li>It’s a web-based tool for creating machine-learning models. I’ll be showing an image classification example using cats and dogs.</li>
-<li>A more business relevant application might be in quality control: identifying good and bad components on a production line.</li>
+<li>A more business relevant example might be in quality control: identifying good and bad components on a production line.</li>
 </ul>
 </section>
 <section id="the-demo" class="slide level1">
@@ -41,6 +41,7 @@
 <ul>
 <li><p>Train a machine learning model using <a href="https://teachablemachine.withgoogle.com/train">Teachable Machine</a></p></li>
 <li><p>Train the model to classify images as cats or dogs using a training dataset</p></li>
+<li><p>Essentially I’m giving some examples of each, and letting the model look for patterns in the data</p></li>
 <li><p>Test the model with different test images and review its classification power</p></li>
 </ul>
 </section>
@@ -129,7 +130,7 @@
 <section id="second-model" class="slide level1">
 <h1>Second model</h1>
 <ul>
-<li>Train a model using a training dataset with the same number of cats as dogs</li>
+<li>Use a training dataset with the same number of cats as dogs</li>
 <li>How does this affect the classification power using the same test images?</li>
 <li>One cat misclassified as a dog, and three dogs misclassified as cats.</li>
 </ul>
@@ -292,8 +293,8 @@
 </tbody>
 </table>
 </section>
-<section id="model-comparisons" class="slide level1">
-<h1>Model comparisons</h1>
+<section id="comparison-of-test-results" class="slide level1">
+<h1>Comparison of test results</h1>
 </section>
 <section class="slide level1">
 
@@ -413,40 +414,23 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li><p>TODO:</p></li>
-<li><p><input type="checkbox" disabled="" />
-test with some ‘fun’ examples. Cartoons, wolves, lions</p></li>
-<li><p><input type="checkbox" disabled="" />
-demo in python</p></li>
-<li><p><input type="checkbox" disabled="" checked="" />
-write python code to analyse the test folder and display results</p></li>
-<li><p><input type="checkbox" disabled="" checked="" />
-pass model to load as command line argument</p></li>
-<li><p><input type="checkbox" disabled="" />
-make this into an actual slideshow</p></li>
-</ul>
 </section>
 <section id="take-home-messages" class="slide level1">
 <h1>Take-home messages</h1>
 <ul>
-<li>The process is rather a black box: you don’t have much control, so if it performs well that’s great, but there’s not much you can do if it doesn’t do what you want.</li>
-<li>There is time involved in getting good input data. The robustness of the predictive algorithm is affected by the quality of the training data set.
+<li>The process is a ‘black box’: it might perform well, but it might not. The model finds patterns in the data, but it might not find what’s important to you. However…</li>
+<li>The predictive power is affected by the quality of the training data set.
 <ul>
-<li>Image segmentation may help as preprocessing step, as well as centering and orienting the images - the machine learning is looking for patterns, but the patterns found may not be the ones you think are important</li>
-<li>You should be careful to remove bias from your training data set so that the model isn’t biased in favour of the majority class. Maybe show this <a href="https://youtu.be/59bMh59JQDo">video</a>?</li>
+<li>You should be careful to remove bias from your training data set so that the model isn’t biased in favour of the majority class, images with blank backgrounds, centred images, etc. <a href="https://youtu.be/59bMh59JQDo">Short video on bias</a></li>
 </ul></li>
-<li>AI needs data to fuel it</li>
+<li>There is time involved in getting good input data, but AI needs data to fuel it!</li>
 </ul>
 </section>
-<section id="additional-thoughts-from-discussion-with-david" class="slide level1">
-<h1>additional thoughts from discussion with David</h1>
+<section id="business-applications" class="slide level1">
+<h1>Business applications</h1>
 <ul>
-<li><p>image segmentation - identifying the animals in a larger image rather than blank background</p></li>
-<li><p>nurse/doctor word example - see salford slides</p></li>
-<li><p>elephant in the room https://arxiv.org/pdf/1808.03305.pdf</p></li>
-<li><p>spot the difference is easier than what is this - production line should be an easier problem</p></li>
-<li><p>cost-benefit of false positives vs false negatives</p></li>
+<li><p>“Spot the difference” is easier than “what is this?”, so production line example should be an easier problem</p></li>
+<li><p>Cost-benefit of false positives vs false negatives - <a href="%5BTeachable%20Machine%5D(https://teachablemachine.withgoogle.com/models/GnT5TW_bO/)">are you a cat or a dog?</a></p></li>
 </ul>
 </section>
     </div>
