@@ -1,4 +1,4 @@
-# An introduction to machine learning using an image classification demo
+# An introduction to machine learning: image classification
 
 # Intro
 
