@@ -105,5 +105,4 @@
 # Business applications
 
 - "Spot the difference" is easier than "what is this?", so production line example should be an easier problem
-
-- Cost-benefit of false positives vs false negatives - [are you a cat or a dog?]([Teachable Machine](https://teachablemachine.withgoogle.com/models/GnT5TW_bO/))
+- Cost-benefit of false positives vs false negatives - [are you a cat or a dog?](https://teachablemachine.withgoogle.com/models/GnT5TW_bO/)
