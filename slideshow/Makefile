@@ -14,3 +14,7 @@ endif
 
 index.html: slides.md Makefile ${theme_css}
 	pandoc -t revealjs -s -o $@ $< -V revealjs-url=./${reveal} -V theme=${theme}
+
+.PHONY: show
+show: index.html
+	google-chrome $<
