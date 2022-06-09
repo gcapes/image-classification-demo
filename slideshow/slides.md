@@ -2,18 +2,16 @@
 
 # Intro
 
-- I'll be using [Teachable Machine](https://teachablemachine.withgoogle.com/train/image) for this example
-- It's a web-based tool for creating machine-learning models. I'll be showing an image classification example using cats and dogs.
+- I'll be using [Teachable Machine](https://teachablemachine.withgoogle.com/) for this example
+(a web-based tool for creating machine-learning models).
+- I'll be showing an image classification example using cats and dogs.
 - A more business relevant example might be in quality control: identifying good and bad components on a production line.
 
 # The demo
 
-- Train a machine learning model using [Teachable Machine](https://teachablemachine.withgoogle.com/train)
-
+- Train a machine learning model using [Teachable Machine](https://teachablemachine.withgoogle.com/train/image)
 - Train the model to classify images as cats or dogs using a training dataset
-
 - Essentially I'm giving some examples of each, and letting the model look for patterns in the data
-
 - Test the model with different test images and review its classification power
 
 # First model
@@ -97,9 +95,11 @@
 
 # Take-home messages
 
-- The process is a 'black box': it might perform well, but it might not. The model finds patterns in the data, but it might not find what's important to you. However...
-- The predictive power is affected by the quality of the training data set.
-  - You should be careful to remove bias from your training data set so that the model isn't biased in favour of the majority class, images with blank backgrounds, centred images, etc. [Short video on bias](https://youtu.be/59bMh59JQDo)
+- The process is a 'black box': it might perform well, but it might not.
+  The model finds patterns in the data, but it might not find what's important to you. However...
+- The predictive power of a given algorithm is affected by the quality of the training data set.
+  - You should be careful to remove bias from your training data set so that the model isn't biased in favour of the majority class,
+    images with blank backgrounds, centred images, etc. [Short video on bias](https://youtu.be/59bMh59JQDo)
 - There is time involved in getting good input data, but AI needs data to fuel it!
 
 # Business applications
