@@ -108,3 +108,4 @@
 - Cost-benefit of false positives vs false negatives
 
 # [Are you a cat or a dog?](https://teachablemachine.withgoogle.com/models/GnT5TW_bO/)
+[More test images](../images/more-test-images)
