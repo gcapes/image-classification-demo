@@ -7,6 +7,7 @@ import csv
 from natsort import natsorted
 import sys
 
+# Supply model name as argument to the script.
 model_file = sys.argv[1]
 # Load the model
 model = load_model(model_file)
