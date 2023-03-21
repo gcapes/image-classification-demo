@@ -10,12 +10,20 @@
   <link rel="stylesheet" href="./reveal.js-master/dist/reset.css">
   <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="./reveal.js-master/dist/theme/mywhite.css" id="theme">
@@ -25,30 +33,42 @@
     <div class="slides">
 
 
-<section id="an-introduction-to-machine-learning-image-classification" class="slide level1">
+<section id="an-introduction-to-machine-learning-image-classification"
+class="slide level1">
 <h1>An introduction to machine learning: image classification</h1>
 </section>
 <section id="intro" class="slide level1">
 <h1>Intro</h1>
 <ul>
-<li>I’ll be using <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a> for this example (a web-based tool for creating machine-learning models).</li>
-<li>I’ll be showing an image classification example using cats and dogs.</li>
-<li>A more business relevant example might be in quality control: identifying good and bad components on a production line.</li>
+<li>I’ll be using <a
+href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>
+for this example (a web-based tool for creating machine-learning
+models).</li>
+<li>I’ll be showing an image classification example using cats and
+dogs.</li>
+<li>A more business relevant example might be in quality control:
+identifying good and bad components on a production line.</li>
 </ul>
 </section>
 <section id="the-demo" class="slide level1">
 <h1>The demo</h1>
 <ul>
-<li>Train a machine learning model using <a href="https://teachablemachine.withgoogle.com/train/image">Teachable Machine</a></li>
-<li>Train the model to classify images as cats or dogs using a training dataset</li>
-<li>Essentially I’m giving some examples of each, and letting the model look for patterns in the data</li>
-<li>Test the model with different test images and review its classification power</li>
+<li>Train a machine learning model using <a
+href="https://teachablemachine.withgoogle.com/train/image">Teachable
+Machine</a></li>
+<li>Train the model to classify images as cats or dogs using a training
+dataset</li>
+<li>Essentially I’m giving some examples of each, and letting the model
+look for patterns in the data</li>
+<li>Test the model with different test images and review its
+classification power</li>
 </ul>
 </section>
 <section id="first-model" class="slide level1">
 <h1>First model</h1>
 <ul>
-<li>First training dataset has 15 images of cats and 6 images of dogs</li>
+<li>First training dataset has 15 images of cats and 6 images of
+dogs</li>
 <li>Three dogs incorrectly classified as cats.</li>
 </ul>
 </section>
@@ -131,8 +151,10 @@
 <h1>Second model</h1>
 <ul>
 <li>Use a training dataset with the same number of cats as dogs</li>
-<li>How does this affect the classification power using the same test images?</li>
-<li>One cat misclassified as a dog, and three dogs misclassified as cats.</li>
+<li>How does this affect the classification power using the same test
+images?</li>
+<li>Same three dogs are misclassified as cats, and now one cat is
+misclassified as a dog</li>
 </ul>
 </section>
 <section class="slide level1">
@@ -295,10 +317,24 @@
 </section>
 <section id="comparison-of-test-results" class="slide level1">
 <h1>Comparison of test results</h1>
+<ul>
+<li>The more training data we have, the better the results</li>
+<li>The more balanced the training data, the better the outcome</li>
+</ul>
 </section>
 <section class="slide level1">
 
 <table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 43%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>file</th>
@@ -418,23 +454,33 @@
 <section id="take-home-messages" class="slide level1">
 <h1>Take-home messages</h1>
 <ul>
-<li>The process is a ‘black box’: it might perform well, but it might not. The model finds patterns in the data, but it might not find what’s important to you. However…</li>
-<li>The predictive power of a given algorithm is affected by the quality of the training data set.
+<li>The process is a ‘black box’: it might perform well, but it might
+not. The model finds patterns in the data, but it might not find what’s
+important to you. However…</li>
+<li>The predictive power of a given algorithm is affected by the quality
+of the training data set.
 <ul>
-<li>You should be careful to remove bias from your training data set so that the model isn’t biased in favour of the majority class, images with blank backgrounds, centred images, etc. <a href="https://youtu.be/59bMh59JQDo">Short video on bias</a></li>
+<li>You should be careful to remove bias from your training data set so
+that the model isn’t biased in favour of the majority class, images with
+blank backgrounds, centred images, etc. <a
+href="https://youtu.be/59bMh59JQDo">Short video on bias</a></li>
 </ul></li>
-<li>There is time involved in getting good input data, but AI needs data to fuel it!</li>
+<li>There is time involved in getting good input data, but AI needs data
+to fuel it!</li>
 </ul>
 </section>
 <section id="business-applications" class="slide level1">
 <h1>Business applications</h1>
 <ul>
-<li>“Spot the difference” is easier than “what is this?”, so production line example should be an easier problem</li>
+<li>“Spot the difference” is easier than “what is this?”, so production
+line example should be an easier problem</li>
 <li>Cost-benefit of false positives vs false negatives</li>
 </ul>
 </section>
 <section id="are-you-a-cat-or-a-dog" class="slide level1">
-<h1><a href="https://teachablemachine.withgoogle.com/models/GnT5TW_bO/">Are you a cat or a dog?</a></h1>
+<h1><a
+href="https://teachablemachine.withgoogle.com/models/GnT5TW_bO/">Are you
+a cat or a dog?</a></h1>
 <p><a href="../images/more-test-images">More test images</a></p>
 </section>
     </div>
@@ -477,7 +523,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

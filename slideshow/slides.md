@@ -38,7 +38,7 @@
 
 - Use a training dataset with the same number of cats as dogs
 - How does this affect the classification power using the same test images?
-- One cat misclassified as a dog, and three dogs misclassified as cats.
+- Same three dogs are misclassified as cats, and now one cat is misclassified as a dog
 
 ---
 
@@ -77,6 +77,9 @@
 | Test10.jpg | ![](../images/test-data/Test10.jpg) | 0      | 100    |
 
 # Comparison of test results
+
+- The more training data we have, the better the results
+- The more balanced the training data, the better the outcome
 
 ---
 
