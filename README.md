@@ -8,3 +8,6 @@ The slideshow gives an overview of the process.
 
 There is a python script in the `code` directory which can run the models
 created using teachable machine, which have been exported to the keras format.
+
+## How to run
+`cd` to the `code` directory, then run `python classify_images.py original_keras_model.h5`.
